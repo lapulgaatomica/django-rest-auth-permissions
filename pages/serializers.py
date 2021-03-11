@@ -5,4 +5,5 @@ from .models import Article
 class ArticleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Article
-        fields = ('paragraph', 'author', )
+        fields = ('id', 'paragraph', 'author', )
+        extra_kwargs = {'author': {'required': False}}
