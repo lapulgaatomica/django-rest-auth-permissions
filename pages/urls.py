@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import PagesAPIView
+from .views import PagesAPIViewList, PagesAPIViewDetail
 
 urlpatterns = [
-    path('', PagesAPIView.as_view()),
+    path('', PagesAPIViewList.as_view()),
+    path('<int:pk>/', PagesAPIViewDetail.as_view()),
 ]
